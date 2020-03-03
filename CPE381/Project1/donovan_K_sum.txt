@@ -1,0 +1,9 @@
+File Names: 	Input WAV File Name: donovan_k_mod_MATLAB.wav
+	Output WAV File Name: donovan_K_mod.wav
+	Summary File Name: donovan_K_sum.txt
+Sampling Frequency: -2111731539
+Number of Channels: 0
+Number of Bits/Sample: 0
+Length in Seconds: 0
+Maximum Absolute Value of Sample: 0
+Execution Time: 0ms
