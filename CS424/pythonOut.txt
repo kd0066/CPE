@@ -1,0 +1,23 @@
+Line     Token Type     Lexeme
+ 1       Keyword         int
+ 1       Keyword         main
+ 1       Punctuation     (
+ 1       Punctuation     )
+ 2       Punctuation     {
+ 3       Keyword         char
+ 3       Punctuation     ;
+ 5       Keyword         float
+ 5       Punctuation     :
+ 6       Operator        =
+ 6       Character       h
+ 7       Operator        +
+ 7       Integer         3
+ 8       Float           5.67
+ 9       Punctuation     }
+ERROR (30.) is nonsense
+
+Symbol Table
+Symbol        Line Numbers
+c             (3, 6, 7)
+item          (4, 7)
+x2b           (5, 8)

@@ -1,0 +1,10 @@
+int main ( )
+{
+  char c ;
+  int item ;
+  float x2b :
+  c = 'h' ;
+  item = c + 3 ;
+  x2b = 5.67 ;
+}
+30.
