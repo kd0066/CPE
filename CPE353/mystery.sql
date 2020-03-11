@@ -1,0 +1,1 @@
+create table t0(‰ DEFAULT(0= @10)NOT/**/NULL);REPLACE into t0 select nulLif(1,1)'';

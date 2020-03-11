@@ -1,0 +1,41 @@
+CREATE TABLE student(last TEXT,first TEXT, anum INT);
+INSERT INTO student VALUES('Smith', 'Jane', 1234);
+INSERT INTO student VALUES('Lincoln', 'Abraham', 2345);
+INSERT INTO student VALUES('Franklin', 'Benjamin', 3456);
+INSERT INTO student VALUES('Doe', 'John', 4567);
+
+CREATE TABLE catalog(crn INT, course TEXT, title TEXT, hours INT);
+INSERT INTO catalog VALUES(0000, 'CPE 112','C+', 3);
+INSERT INTO catalog VALUES(1111, 'CPE 112L','Lab+', 0);
+INSERT INTO catalog VALUES(2222, 'CPE 212','C++', 3);
+INSERT INTO catalog VALUES(3333, 'CPE 221','Org', 3);
+INSERT INTO catalog VALUES(4444, 'CPE 322','HW', 3);
+INSERT INTO catalog VALUES(5555, 'CPE 323','Embedded', 3);
+INSERT INTO catalog VALUES(6666, 'CPE 324','HWLab', 1);
+INSERT INTO catalog VALUES(7777, 'CPE 325','LabEmbed', 1);
+INSERT INTO catalog VALUES(8888, 'CPE 434','OS', 3);
+INSERT INTO catalog VALUES(9999, 'CPE 435','LabOS', 1);
+
+CREATE TABLE schedule(anum INT, crn INT);
+INSERT INTO schedule VALUES(1234, 0000);
+INSERT INTO schedule VALUES(1234, 1111);
+INSERT INTO schedule VALUES(1234, 3333);
+INSERT INTO schedule VALUES(2345, 3333);
+INSERT INTO schedule VALUES(3456, 4444);
+INSERT INTO schedule VALUES(3456, 6666);
+INSERT INTO schedule VALUES(4567, 4444);
+INSERT INTO schedule VALUES(4567, 8888);
+INSERT INTO schedule VALUES(4567, 9999);
+
+
+SELECT first, last FROM student WHERE [anum] = 1234;
+
+SELECT crn FROM schedule WHERE [anum] = 1234;
+
+SELECT course FROM catalog WHERE [hours] = 1;
+
+SELECT crn FROM catalog WHERE "anum" IN (SELECT "anum" FROM student WHERE last='Franklin' AND first='Benjamin');
+
+SELECT crn FROM catalog WHERE crn NOT IN (SELECT crn FROM schedule);
+
+SELECT COUNT ("anum") FROM  schedule WHERE "anum"='4567';

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Pictures/Emperor_penguins.jpg</file>
+        <file>Pictures/istock-511366776.jpg</file>
+        <file>Pictures/Penguins.jpg</file>
+    </qresource>
+</RCC>

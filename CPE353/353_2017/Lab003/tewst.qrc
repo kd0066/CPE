@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/Emperor_penguins.jpg</file>
+        <file>images/istock-511366776.jpg</file>
+        <file>images/Penguins.jpg</file>
+        <file>icons.qrc</file>
+        <file>Lab003.pro</file>
+        <file>main.cpp</file>
+        <file>mainwindow.cpp</file>
+        <file>mainwindow.h</file>
+        <file>mainwindow.ui</file>
+        <file>tewst.qrc</file>
+    </qresource>
+</RCC>
