@@ -8,8 +8,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     // Define opening the random numbers file
     string fileName = "Project2_part1_rn.txt";
     ifstream inFile(fileName);
@@ -27,46 +26,35 @@ int main()
     bool allSent = false;
     string line;
 
-    if (inFile.is_open())
-    {
-        while(allSent == false)
-        {
+    if (inFile.is_open()) {
+        while(allSent == false) {
             // If all slots are successful then stop looping
             int sentCount = 0;
-            for (int i = 0; i < 6; i++)
-            {
-                if (status[i] == true)
-                {
+            for (int i = 0; i < 6; i++) {
+                if (status[i] == true) {
                     sentCount++;
                 }
             }
 
             // If the number of stations sent successfully is 6 then break out of loop
-            if (sentCount == 6)
-            {
+            if (sentCount == 6) {
                 allSent = true;
             }
 
             // Determine how many stations are in the time slot
             int numInSlot = 0;
-            for (int i = 0; i < 6; i++)
-            {
-                if (whatSlotNum[i] == slotCount)
-                {
+            for (int i = 0; i < 6; i++) {
+                if (whatSlotNum[i] == slotCount) {
                     numInSlot++;
                 }
             }
 
             // Loop through all stations
             // If the station's slot is the same as the slot count then determine if it is successful or not
-            for (int i = 0; i < 6; i++)
-            {
-                if (whatSlotNum[i] == slotCount)
-                {
-                    if (status[i] != true)
-                    {
-                        if (numInSlot != 1)
-                        {
+            for (int i = 0; i < 6; i++) {
+                if (whatSlotNum[i] == slotCount){
+                    if (status[i] != true) {
+                        if (numInSlot != 1) {
                             // Input a value for that station since it still isnt successful
                             getline(inFile, line);
                             stationValues[i] = line;
@@ -79,10 +67,8 @@ int main()
 
                             cout << stationName[i] << " was moved to slot " << whatSlotNum[i] << endl;
 
-                            for (int j = 0; j < 6; j++)
-                            {
-                                if (whatSlotNum[j] == slotCount)
-                                {
+                            for (int j = 0; j < 6; j++) {
+                                if (whatSlotNum[j] == slotCount) {
                                     // Input a value for that station since it still isnt successful
                                     getline(inFile, line);
                                     stationValues[j] = line;
@@ -97,37 +83,21 @@ int main()
                                 }
                             }
                         }
-                        else
-                        {
+                        else {
                             status[i] = true;
                             cout << stationName[i] << " successful at slot " << whatSlotNum[i] << endl;
                         }
 
                     }
-                    else
-                    {
-                        continue;
-                    }
-
                 }
-                else
-                {
-                    continue;
-                }
-
             }
-
             slotCount++;
-
         }
     }
 
-    cout << "\nFinal Transmission Slots:" << endl;
-    for (int i = 0; i < 6; i++)
-    {
+    cout << endl << "Final Transmission Slots:" << endl;
+    for (int i = 0; i < 6; i++) {
         int timeoutValue = whatSlotNum[i] * 51.2;
         cout << stationName[i] << " was successfully transmitted at slot " << whatSlotNum[i] << " with a timeout value of " << timeoutValue << "us\n";
     }
-
-    return 0;
 }
